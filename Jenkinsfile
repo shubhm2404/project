@@ -10,6 +10,13 @@ pipeline {
             }
         }
 	
+	stage('Build') {
+            steps {
+                echo 'Building.......'
+            }
+        }
+
+
 	stage('Build Docker Image') {
             steps {
                 script {
@@ -31,11 +38,6 @@ pipeline {
                 }
             }
 	
-        stage('Build') {
-            steps {
-                echo 'Building.......'
-            }
-        }
         stage('Test') {
             steps {
                 echo 'Testing...'
