@@ -23,7 +23,7 @@ pipeline {
                     // Login to Docker registry using the Docker PAT
                     docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS) {
                         // Build Docker image
-                        sh 'docker build -t my-image:latest .'
+                        sh 'docker build -t ubuntu:latest .'
                     }
                 }
             }
@@ -33,7 +33,7 @@ pipeline {
                 script {
                     // Push Docker image to registry
                     docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS) {
-                        sh 'docker push my-image:latest'
+                        sh 'docker push ubuntu:latest'
                     }
                 }
             }
