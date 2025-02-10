@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_CREDENTIALS = credentials('docker')  // Use the credentials ID here
+        DOCKER_CREDENTIALS = credentials(docker)  // Use the credentials ID here
         DOCKER_IMAGE = 'ubuntu:latest'    // Define your Docker image name and tag
     }
 
